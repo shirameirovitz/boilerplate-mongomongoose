@@ -65,10 +65,11 @@ const createManyPeople = (arrayOfPeople, done) => {
       done(null, updatedDoc);
     })
   };
-const removeById = (personId, done) => {
-  done(null /*, data*/);
-};
-
+  const removeById = (personId, done) => {
+    Person.findByIdAndRemove(personId).then(response =>
+    done(null ,response)
+    )
+  };
 const removeManyPeople = (done) => {
   const nameToRemove = "Mary";
 
