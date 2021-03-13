@@ -77,11 +77,12 @@ const createManyPeople = (arrayOfPeople, done) => {
   )
   };
 
-const queryChain = (done) => {
-  const foodToSearch = "burrito";
-
-  done(null /*, data*/);
-};
+  const queryChain = (done) => {
+    const foodToSearch = "burrito";
+  const find = Person.find({favoriteFoods: foodToSearch}).sort({name: -1}).limit(2).select({ name:1, age:0, favoriteFoods:1 })
+    .exec((arr,err) =>
+    done(null ,arr))
+    };
 
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
