@@ -38,10 +38,11 @@ const createManyPeople = (arrayOfPeople, done) => {
     done(null ,resolte)
     )
   };
-
-const findPersonById = (personId, done) => {
-  done(null /*, data*/);
-};
+  const findPersonById = (personId, done) => {
+    Person.findById(personId).then(resolte =>
+    done(null, resolte))
+  };
+  
 
 const findEditThenSave = (personId, done) => {
   const foodToAdd = "hamburger";
