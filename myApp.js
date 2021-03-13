@@ -70,11 +70,12 @@ const createManyPeople = (arrayOfPeople, done) => {
     done(null ,response)
     )
   };
-const removeManyPeople = (done) => {
-  const nameToRemove = "Mary";
-
-  done(null /*, data*/);
-};
+  const removeManyPeople = (done) => {
+    const nameToRemove = "Mary";
+  Person.remove({name: nameToRemove}).then(resolte =>
+    done(null ,resolte)
+  )
+  };
 
 const queryChain = (done) => {
   const foodToSearch = "burrito";
